@@ -12,7 +12,7 @@ resource "google_sql_database_instance" "main" {
     ip_configuration {
       authorized_networks {
         name  = "ALL"
-        value = "0.0.0.0/32"
+        value = "0.0.0.0/0"
       }
     }
     backup_configuration {
