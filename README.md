@@ -13,6 +13,9 @@ helm repo add Prometheus-community https://prometheus-community.github.io/helm-c
 helm search repo kube-prometheus-stack
 helm pull Prometheus-community/kube-prometheus-stack --untar
 helm install prometheus ./helm/kube-prometheus-stack
+
+kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 9090
+
 ```
 
 ## References
