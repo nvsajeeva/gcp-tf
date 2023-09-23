@@ -3,7 +3,7 @@ provider "google" {
   region  = var.region
 }
 
-resource "google_sql_database_instance" "main" {
+resource "google_sql_database_instance" "cloudsql1" {
   name             = "cloudsql1"
   database_version = "MYSQL_8_0"
   deletion_protection = false

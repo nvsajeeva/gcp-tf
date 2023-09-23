@@ -1,0 +1,24 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  annotations:
+    meta.helm.sh/release-name: prometheus
+    meta.helm.sh/release-namespace: default
+  labels:
+    app: kube-prometheus-stack-cloudsql1
+    app.kubernetes.io/instance: prometheus
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kube-prometheus-stack
+    app.kubernetes.io/version: 50.3.1
+    chart: kube-prometheus-stack-50.3.1
+    heritage: Helm
+    release: prometheus
+  name: prometheus-kube-prometheus-cloudsql1
+spec:
+  endpoints:
+  - interval: 15s
+    port: mysql-exporter
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: cloudsql1
+      release: prometheus

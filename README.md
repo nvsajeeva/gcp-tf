@@ -18,6 +18,14 @@ kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0 9090
 
 ```
 
+## MySQL exporter
+
+```
+helm pull prometheus-community/prometheus-mysql-exporter --untar
+helm install cloudsql1 helm/prometheus-mysql-exporter -f cloudsql1.yaml
+kubectl apply -f cloudsql1-service-monitor.yaml
+```
+
 ## References
 
 https://developer.hashicorp.com/terraform/tutorials/kubernetes/gke
